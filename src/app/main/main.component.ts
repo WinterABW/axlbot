@@ -10,4 +10,12 @@ import { ActionsComponent } from '../actions/actions.component';
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss',
 })
-export class MainComponent {}
+export class MainComponent {
+
+  number=0
+
+  tap(){
+    this.number++
+    console.log(this.number);
+  }
+}
