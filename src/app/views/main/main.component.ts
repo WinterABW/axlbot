@@ -12,10 +12,9 @@ import { ActionsComponent } from '../actions/actions.component';
 })
 export class MainComponent {
 
-  number=0
+  number:number=0
 
   tap(){
-    this.number++
-    console.log(this.number);
+    this.number+=1
   }
 }

@@ -8,7 +8,7 @@ export class ControllerTapService {
   coins = new BehaviorSubject<number>(0);
   coins$ = this.coins.asObservable();
 
-  setCoins(){
-    this.coins.next(1)
+  setCoins(coins: number){
+    this.coins.next(coins)
   }
 }
