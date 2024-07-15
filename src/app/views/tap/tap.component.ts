@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ControllerTapService } from '../../services/common/controller-tap.service';
 
 @Component({
   selector: 'app-tap',
@@ -8,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './tap.component.scss'
 })
 export class TapComponent {
+  private tapSvc=inject(ControllerTapService)
 
+  tap() {
+    const currentCoins = this.tapSvc.getCoins();
+    this.tapSvc.setCoins(currentCoins + 1);
+  }
 }

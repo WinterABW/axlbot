@@ -5,10 +5,14 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class ControllerTapService {
-  coins = new BehaviorSubject<number>(0);
+  private coins = new BehaviorSubject<number>(0);
   coins$ = this.coins.asObservable();
 
   setCoins(coins: number){
     this.coins.next(coins)
+  }
+
+  getCoins(): number {
+    return this.coins.getValue();
   }
 }
